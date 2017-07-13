@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Album } from '../album.model';
 import { Router } from '@angular/router';
 import { AlbumService } from '../album.service';
+import { FirebaseListObservable } from 'angularfore2/database';
 
 @Component({
   selector: 'app-marketplace',
@@ -10,7 +11,7 @@ import { AlbumService } from '../album.service';
   providers: [AlbumService]
 })
 export class MarketplaceComponent implements OnInit {
-  albums: Album[];
+  albums: FirebaseListObserbable<any[]>;
 
   constructor(private router: Router, private albumService: AlbumService) {}
 

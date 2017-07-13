@@ -4,11 +4,22 @@ import { ALBUMS } from './sample-data';
 
 @Injectable()
 export class AlbumService {
+  albums:FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private database: AngularFirebaseDatabase) { 
+    this.albums = database.list('albums');
+  }
   
   getAlbums() {
-    return ALBUMS;
+    return this.albums;
+  }
+
+  getAlbumById(albumId: number) {
+    for (var i=0; i<=ALBUMS.length-1; i++) {
+      if (ALBUMS[i].id === albumId) {
+        return ALBUMS[i];
+      }
+    }
   }
 
 }
