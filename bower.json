@@ -1,0 +1,24 @@
+{
+  "name": "music-store",
+  "description": "another music store",
+  "main": "",
+  "authors": [
+    "eluts <eluts15@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "music",
+    "store"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "boostrap#^3.3.7"
+  }
+}
