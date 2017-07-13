@@ -11,14 +11,17 @@ import { AppComponent } from './app.component';
 import { SplashComponent } from './splash/splash.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { AboutComponent } from './about/about.component';
+import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import { routing } from './app.routing';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SplashComponent,
     MarketplaceComponent,
-    AboutComponent
+    AboutComponent,
+    AlbumDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,10 @@
 import { ModuleWithProviders } from  '@angular/core';
 import { Routes, RouterModule } from  '@angular/router';
+
 import { SplashComponent } from './splash/splash.component';
 import { AboutComponent } from './about/about.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
 const appRoutes: Routes = [
 
@@ -15,6 +18,15 @@ const appRoutes: Routes = [
     component: AboutComponent
   },
 
+  {
+    path: 'marketplace',
+    component: MarketplaceComponent
+  },
+
+  {
+    path: 'albums/:id',
+    component: AlbumDetailComponent
+  },
 
 ];
 
