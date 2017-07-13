@@ -1,23 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Album } from '../album.model';
 import { Router } from '@angular/router';
+import { AlbumService } from '../album.service';
 
 @Component({
   selector: 'app-marketplace',
   templateUrl: './marketplace.component.html',
-  styleUrls: ['./marketplace.component.css']
+  styleUrls: ['./marketplace.component.css'],
+  providers: [AlbumService]
 })
-export class MarketplaceComponent {
+export class MarketplaceComponent implements OnInit {
+  albums: Album[];
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private albumService: AlbumService) {}
 
-  albums: Album[] = [
-    new Album('Miami Pop Festival', 'Jimi Hendrix', 'Album by Jimi Hendrix', 1),
-    new Album('Machine Gun: Live at The Fillmore East 12...', 'Jimi Hendrix', 'Album by Jimi Hendrix', 2),
-    new Album('Mothership', 'Led Zeppelin', 'By Led Zeppelin', 3),
-    new Album('Physical Graffiti', 'Led Zeppelin', 'By Led Zeppelin', 4),
-    new Album('Coda','Led Zeppelin', 'By Led Zeppelin', 5)
-  ];
+  ngOnInit() {
+    this.albums = this.albumService.getAlbums();
+  }
 
   goToDetailPage(clickedAlbum: Album) {
     this.router.navigate(['albums', clickedAlbum.id]);
