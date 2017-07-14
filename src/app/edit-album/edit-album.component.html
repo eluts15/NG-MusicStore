@@ -1,14 +1,15 @@
 <h4>Edit Album Info</h4>
 
 <label>New Album Title:</label>
-<input [(ngModel)]="selectedAlbum.title">
+<input [(ngModel)]="selectedAlbum.title" placeholder="Song Title">
 <br>
 
-<label>New Album Artist:</label>
-<input [(ngModel)]="selectedAlbum.artist">
+<label>New Album Title:</label>
+<input [(ngModel)]="selectedAlbum.artist" placeholder="Song Artist">
 <br>
 
 <label>New Album Description:</label>
-<input [(ngModel)]="selectedAlbum.description">
+<input [(ngModel)]="selectedAlbum.description" placeholder="Bio">
 
 <button (click)="beginUpdatingAlbum(selectedAlbum)">Update</button>
+<button (click)="beginDeletingAlbum(selectedAlbum)">Delete</button>

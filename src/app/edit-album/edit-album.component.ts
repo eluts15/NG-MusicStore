@@ -19,4 +19,10 @@ export class EditAlbumComponent implements OnInit {
     this.albumService.updateAlbum(albumToUpdate);
   }
 
+  beginDeletingAlbum(albumToDelete) {
+    if(confirm("Are you sure you want to delete this album?")) {
+      this.albumService.deleteAlbum(albumToDelete);
+    }
+  }
+
 }

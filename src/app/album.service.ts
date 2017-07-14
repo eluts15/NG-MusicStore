@@ -6,10 +6,10 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class AlbumService {
   albums: FirebaseListObservable<any[]>;
 
-  constructor(private database: AngularFireDatabase) { 
+  constructor(private database: AngularFireDatabase) {
     this.albums = database.list('albums');
   }
-  
+
   getAlbums() {
     return this.albums;
   }
@@ -28,6 +28,11 @@ export class AlbumService {
          albumEntryInFirebase.update({title: localUpdatedAlbum.title,
                                       artist: localUpdatedAlbum.artist,
                                       description: localUpdatedAlbum.description});
+    }
+
+    deleteAlbum(localAlbumToDelete) {
+      var albumEntryInFirebase = this.getAlbumById(localAlbumToDelete.$key);
+      albumEntryInFirebase.remove();
     }
 
 }
