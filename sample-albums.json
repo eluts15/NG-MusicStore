@@ -1,5 +1,5 @@
 { "albums": [{
-    "tittle": "Pulse",
+    "title": "Pulse",
     "artist": "Pink Floyd",
     "description": "A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.",
     "id": "1"
@@ -15,4 +15,3 @@
     "id": "3"
     }]
 }
-
